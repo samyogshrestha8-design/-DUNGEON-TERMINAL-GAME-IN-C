@@ -43,7 +43,7 @@ while (isruning){
     char input = '\0';
     printf("W A S D to move , q to quit: ");
     scanf(" %c",&input);
-    playermoves(input,&playerX,&playerY,map,8,15);
+    playermoves(input,&playerX,&playerY,map,8,15,&isruning);
     findkey(map,playerX,playerY,keyX,keyY,&haskey);
     wincheck(&haskey,&isruning,map,playerX,playerY,existX,existY);
 

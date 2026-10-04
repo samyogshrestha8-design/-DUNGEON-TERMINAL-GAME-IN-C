@@ -1,5 +1,7 @@
 #include<stdio.h>
 #include<stdbool.h>
+#include<windows.h>
+#include<conio.h>
 #include"tools.h"
 void level3(){
     printf("starting level 2\n");
@@ -8,6 +10,7 @@ void level3(){
     int playerX= 1,playerY=1;
     int keyX= -1,keyY=-1;
     int existX = -1,existY=-1;
+    int enemyX = -1,enemyY= -1;
     char map[MAX_ROWS][MAX_COLS + 1] = {
     "###############################",
     "#P      #       #       #     #",
@@ -22,7 +25,7 @@ void level3(){
     "# # ######### ####### ##### # #",
     "# #         #       #     # #",
     "# ######### ####### ##### # #",
-    "#                     #   E #",
+    "#                 X    #   E #",
     "###############################"
 };
 for(int i = 0; i < 15;i++){
@@ -38,19 +41,36 @@ for(int i = 0; i < 15;i++){
             existY = j;
 
         }
+        if(map[i][j]=='X'){
+            enemyX = i;
+            enemyY = j;
+        }
+
+
         
     }
 }
 while (isruning){
-    for(int i = 0 ; i <15;i++){
-        printf("%s\n",map[i]);
+  
+    if(_kbhit()){
+        char input =_getch();
+        playermoves(input,&playerX,&playerY,map,15,31,&isruning);
+        
     }
-    char input = '\0';
-    printf("W A S D to move , q to quit: ");
-    scanf(" %c",&input);
-    playermoves(input,&playerX,&playerY,map,15,31);
+
+     
+    
+    
     findkey(map,playerX,playerY,keyX,keyY,&haskey);
     wincheck(&haskey,&isruning,map,playerX,playerY,existX,existY);
+    loss(playerX,playerY,enemyX,enemyY,&isruning);
+    system("cls");
+     for(int i = 0 ; i <15;i++){
+        printf("%s\n",map[i]);
+    }
+    Sleep(50);
+    enemymove(&enemyX,&enemyY,map);
+    
 
 }
 }

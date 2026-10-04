@@ -34,9 +34,10 @@
         isrunning = false;
 
     }
-    playermoves(userinput, &playerX ,&playerY,map,5,9);
+    playermoves(userinput, &playerX ,&playerY,map,5,9,&isrunning);
     findkey(map,playerX,playerY,KeyX,KeyY,&haskey);
     wincheck(&haskey,&isrunning, map,playerX, playerY,existX,existY);
+    
   
    }
 

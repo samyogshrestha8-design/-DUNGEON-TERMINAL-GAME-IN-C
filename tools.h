@@ -12,7 +12,8 @@ void playermoves(
     int *playerY,
     char map[MAX_ROWS][MAX_COLS + 1],
     int rows,
-    int cols
+    int cols,
+    bool *isrunning
 );
 
 void findkey(
@@ -33,5 +34,10 @@ void wincheck(
     int existX,
     int existY
 );
+void enemymove(
+    int *enemyX,
+    int *enemyY,
+    char map[MAX_ROWS][MAX_COLS +1]);
+void loss(int playerX,int playerY,int enimeX,int enimeY,bool *isrunning);
 
 #endif
