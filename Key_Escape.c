@@ -1,7 +1,8 @@
 #include<stdio.h>
 #include<stdbool.h>
 #include"tools.h"
-
+#include<conio.h>
+#include<windows.h>
 
   void Key_Escape (){
     printf("starting level 1 \n");
@@ -23,23 +24,27 @@
         }
     }
    while (isrunning){
-    for(int i = 0 ; i <5;i++){
-        printf("%s \n",map[i]);
-        
-    }
-    char userinput = '\0';
-    printf("W A S D to move , q to quit: ");
-    scanf(" %c",&userinput);
-    if(userinput == 'q'){
-        isrunning = false;
+        if(_kbhit()){
+        char userinput = _getch();
+        playermoves(userinput, &playerX ,&playerY,map,5,9,&isrunning);
 
     }
-    playermoves(userinput, &playerX ,&playerY,map,5,9,&isrunning);
-    findkey(map,playerX,playerY,KeyX,KeyY,&haskey);
-    wincheck(&haskey,&isrunning, map,playerX, playerY,existX,existY);
+    
     
   
+    
+    findkey(map,playerX,playerY,KeyX,KeyY,&haskey);
+    wincheck(&haskey,&isrunning, map,playerX, playerY,existX,existY);
+
+    system("cls");
+  for(int i = 0 ; i <5;i++){
+        printf("%s \n",map[i]);
    }
+ 
+Sleep(30);
+    
+        
+    }
 
 
 

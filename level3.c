@@ -59,17 +59,25 @@ while (isruning){
     }
 
      
-    
+    static int count = 0;
+    count ++;
+    if(count>5){
+        count = 0;
+        enemymove(&enemyX,&enemyY,map);
+
+
+    }
     
     findkey(map,playerX,playerY,keyX,keyY,&haskey);
     wincheck(&haskey,&isruning,map,playerX,playerY,existX,existY);
-    loss(playerX,playerY,enemyX,enemyY,&isruning);
+  
     system("cls");
      for(int i = 0 ; i <15;i++){
         printf("%s\n",map[i]);
     }
-    Sleep(50);
-    enemymove(&enemyX,&enemyY,map);
+    loss(playerX,playerY,enemyX,enemyY,&isruning);
+    Sleep(30);
+    
     
 
 }

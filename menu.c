@@ -10,24 +10,56 @@ int main()
 
     while (running)
     {
-        printf("========================\n");
-        printf("      DUNGEON GAME\n");
-        printf("========================\n");
-        printf("1) Start\n");
-        printf("2) Quit\n");
+printf("\n");
+printf("     ############################################################\n");
+printf("     #                                                          #\n");
+printf("     #          ____   _   _ _   _  ____ _____  ____            #\n");
+printf("     #         |  _ \\ | | | | \\ | |/ ___|  ___|/ ___|         #\n");
+printf("     #         | | | || | | |  \\| | |  _| |_  | |              #\n");
+printf("     #         | |_| || |_| | |\\  | |_| |  _| | |___           #\n");
+printf("     #         |____/  \\___/|_| \\_|\\____|_|    \\____|       #\n");
+printf("     #                                                          #\n");
+printf("     #              =========================                   #\n");
+printf("     #                    D U N G E O N                         #\n");
+printf("     #              =========================                   #\n");
+printf("     #                                                          #\n");
+printf("     #                    /\\          /\\                      #\n");
+printf("     #                   /  \\  ____  /  \\                     #\n");
+printf("     #                  /    \\/    \\/    \\                   #\n");
+printf("     #                 |              _   |                     #\n");
+printf("     #                 |     /\\     | |  |                     #\n");
+printf("     #                 |____/  \\____|_|__|                     #\n");
+printf("     #                                                          #\n");
+printf("     ############################################################\n");
+printf("\n");
+
+printf("                    [1] START GAME\n");
+printf("                    [2] QUIT\n");
+printf("\n");
+printf("                    > ");
 
         printf("Enter choice: ");
         scanf(" %c", &input);
 
         if (input == '1')
         {
-            printf("\n1. Level 1\n");
-            printf("2. Level 2\n");
-            printf("3. level 3 \n");
-            printf("4. Back\n");
-            printf("5. Quit\n");
+            printf("\n");
+printf("\n");
+printf("        +----------------------------------+\n");
+printf("        |          DUNGEON LEVELS          |\n");
+printf("        +----------------------------------+\n");
+printf("        |                                  |\n");
+printf("        |          [1] Level 1             |\n");
+printf("        |          [2] Level 2             |\n");
+printf("        |          [3] Level 3             |\n");
+printf("        |                                  |\n");
+printf("        |          [4] Back                |\n");
+printf("        |          [5] Quit                |\n");
+printf("        |                                  |\n");
+printf("        +----------------------------------+\n");
+printf("\n");
 
-            printf("Enter level: ");
+printf("        Enter level: ");
             scanf(" %c", &input);
 
             if (input == '1')

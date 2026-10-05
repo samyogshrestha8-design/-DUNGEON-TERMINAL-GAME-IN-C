@@ -1,6 +1,8 @@
 #include<stdio.h>
 #include<stdbool.h>
+#include<conio.h>
 #include"tools.h"
+#include<windows.h>
 
 
 void level2(){
@@ -37,16 +39,17 @@ for(int i = 0; i < 8;i++){
     }
 }
 while (isruning){
-    for(int i = 0 ; i <8;i++){
-        printf("%s\n",map[i]);
+    if(_kbhit()){
+        char input = _getch();
+         playermoves(input,&playerX,&playerY,map,8,15,&isruning);
     }
-    char input = '\0';
-    printf("W A S D to move , q to quit: ");
-    scanf(" %c",&input);
-    playermoves(input,&playerX,&playerY,map,8,15,&isruning);
     findkey(map,playerX,playerY,keyX,keyY,&haskey);
     wincheck(&haskey,&isruning,map,playerX,playerY,existX,existY);
-
+    system("cls");
+ for(int i = 0 ; i <8;i++){
+        printf("%s\n",map[i]);
+    }
+    Sleep(30);
 }
 
 }

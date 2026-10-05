@@ -55,12 +55,17 @@
 
     if (map[playerX][playerY] == map[existX][existY]){
         if(*haskey == true){
-        printf("YOU HAVE WON");
+            printf("========================\n");
+            printf("      YOY HAVE WON \n");
+            printf("========================\n");
+            printf("wait 2 secs to play again\n");
         
         *isrunning = false;
+        Sleep(2000);
         return;
         }
         else if (*haskey == false){printf("FIND THE KEY");}
+
         
         
     }
@@ -92,6 +97,13 @@ void enemymove(int *enemyX,
 void loss(int playerX,int playerY,int enimeX,int enimeY,bool *isrunning){
 if (playerX == enimeX && playerY == enimeY){
     *isrunning = false;
+        if(*isrunning == false){
+         printf("========================\n");
+        printf("      YOY HAVE LOST \n");
+        printf("========================\n");
+        printf("wait 2 secs to play again\n");
+            Sleep(2000);
+        }
 
 }
 }
